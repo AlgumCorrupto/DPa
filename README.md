@@ -16,4 +16,9 @@ e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
 </h2>
 <p>Usamos o discord.js para o backend do bot, os comandos devem ficar no diretório <code>./commands</code>.</p>
 <p></p>subdiretórios são permitidos, usamos a lib postgres-node (pg) para fazer crud com o banco de dados</p>
-
+<h2>
+  Progresso:
+</h2>
+- [ ] Webhook para bans e unbans no jogo
+- [ ] Comandos da família playtime
+- [ ] Resumo da rodada no final do round
