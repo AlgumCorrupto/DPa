@@ -6,7 +6,7 @@ module.exports = {
         const configs = require("../config.json")   
         let invLink = new URL('https://discord.com/api/oauth2/authorize')
         invLink.search = `client_id=${configs.clientId}&permissions=${configs.permInt}&scope=bot%20applications.commands`
-        configs.link = invLink.toString();
+        configs.discord.link = invLink.toString();
 
         fs.writeFile("../config.json", JSON.stringify(configs), (err) => {
             if(err)

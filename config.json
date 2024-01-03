@@ -1,6 +1,22 @@
 {
-    "token": "mknoPPbcGa66YR5x7PqyZNBlhLZLFmsE",
-    "permInt": "34880",
-    "clientId": "1191536238365245531",
-    "link": "https://discord.com/api/oauth2/authorize?client_id=123456789012345678&permissions=0&scope=bot%20applications.commands"
+    "discord": {
+        "token": "MTE5MTUzNjIzODM2NTI0NTUzMQ.GwkC4A.wqUilJdMmgOe3VTBKZz33-iOEuRLkcWj78OwZc",
+        "permInt": "34880",
+        "clientId": "1191536238365245531",
+        "link": "https://discord.com/api/oauth2/authorize?client_id=123456789012345678&permissions=0&scope=bot%20applications.commands"
+    },
+    "pirataDb": {
+        "host": "localhost",
+        "user": "paulo",
+        "password": "1307",
+        "database": "ss14",
+        "port": "5432"
+    },
+    "fronteira": {
+        "host": "localhost",
+        "user": "paulo",
+        "password": "1307",
+        "database": "ss14",
+        "port": "5432"
+    }
 }

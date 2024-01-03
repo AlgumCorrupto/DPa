@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits, REST, Routes } = require('discord.js');
-const { token } = require('./config.json');
+const { discord } = require('./config.json');
 const linkGenerator = require('./utils/invite.js')
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -39,6 +39,7 @@ for (const file of eventFiles) {
 
 linkGenerator.genLink();
 
-console.log(token)
+console.log(discord.token + " token")
 
-client.login(token);
+client.login(discord.token);
+console.log("rodando")
