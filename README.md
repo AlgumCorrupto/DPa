@@ -11,3 +11,9 @@ e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
 <p>E pegar um arquivo <code>config.json</code> comigo ou um dos integrantes do projeto, mais tarde eu publico um template na repo.</p>
 <p>Caso tudo esteja certo rode <code>node command-deployer.js</code> e <code>node index.js</code></p>
 
+<h2>
+  Contribuição:
+</h2>
+<p>Usamos o discord.js para o backend do bot, os comandos devem ficar no diretório <code>./commands</code>.</p>
+<p></p>subdiretórios são permitidos, usamos a lib postgres para fazer crud com o banco de dados</p>
+
