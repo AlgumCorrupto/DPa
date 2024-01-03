@@ -19,6 +19,12 @@ e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
 <h2>
   Progresso:
 </h2>
-- [ ] Webhook para bans e unbans no jogo
-- [ ] Comandos da família playtime
-- [ ] Resumo da rodada no final do round
+<p>
+- _ Webhook para bans e unbans no jogo
+</p>
+<p>
+- _ Comandos da família playtime
+</p>
+<p>
+- _ Resumo da rodada no final do round
+</p>
