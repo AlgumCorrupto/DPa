@@ -7,8 +7,8 @@ e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
 <p> Até o momento não cheguei a checar como a instalação é feita em si, no entanto estou usando o node 18 e npm 9 na minha máquina, provavelmente o que você deve fazer é clonar o repositório com o comando:
 <code>git clone https://github.com/AlgumCorrupto/DPa</code>;</p>
 
-<p>Para instalar os pacotes necessários com o comando: <code>npm i</code>.</p>
-<p>E pegar um arquivo <code>config.json</code> comigo ou um dos integrantes do projeto. Mais tarde eu publico um template na repo.</p>
+<p>Para instalar os pacotes necessários use o comando: <code>npm i</code>;</p>
+<p>É necessário pegar um arquivo <code>config.json</code> comigo ou um dos integrantes do projeto. Mais tarde eu publico um template na repo.</p>
 <p>Caso tudo esteja certo rode <code>node command-deployer.js</code> e <code>node index.js</code></p>
 
 <h2>
