@@ -14,7 +14,7 @@ e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
 <h2>
   Contribuição:
 </h2>
-<p>Usamos o discord.js para o backend do bot, os comandos devem ficar no diretório <code>./commands</code>. Subdiretórios são permitidoz</p>
+<p>Usamos o discord.js para o backend do bot, os comandos devem ficar no diretório <code>./commands</code>. Subdiretórios são permitidos</p>
 <p>Usamos a lib postgres-node (pg) para fazer acesso ao o banco de dados</p>
 <h2>
   Progresso:
