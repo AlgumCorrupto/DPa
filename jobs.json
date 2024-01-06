@@ -1,0 +1,91 @@
+{
+    "med": [
+            "MedicalDoctor",
+            "MedicalIntern",
+            "Chemist",
+            "ChiefMedicalOfficer",
+            "ERTMedical",
+            "Paramedic",
+            "Psychologist"
+        ],
+    "sec": [
+        "HeadOfSecurity",
+        "Detective",
+        "SecurityOfficer",
+        "SecurityCadet",
+        "Warden",
+        "Policia",
+        "Soldado",
+        "SeniorOfficer",
+        "ERTSecurity"
+    ],
+    "cargo": [
+        "CargoTechnician",
+        "SalvageSpacialist",
+        "Quartermaster"
+    ],
+    "sci": [
+        "ResearchAssistant",
+        "ResearchDirector",
+        "Scientist",
+        "SeniorResearcher"
+    ],
+    "service": [
+        "Bartender",
+        "HeadOfPersonel",
+        "Botanist",
+        "Boxer",
+        "Chaplain",
+        "Chef",
+        "Clown",
+        "Comerciante",
+        "Janitor",
+        "ERTJanitor",
+        "Lawyer",
+        "Librarian",
+        "Mime",
+        "Musician",
+        "Reporter",
+        "Zookeper"
+    ],
+    "engi": [
+        "AtmosphericTechnician",
+        "ChiefEngineer",
+        "SeniorEngineer",
+        "ERTEngineer",
+        "StationEngineer",
+        "TechnicalAssistant"
+    ],
+    "head": [
+        "ChiefMedicalOfficer",
+        "HeadOfPersonel",
+        "HeadOfSecurity",
+        "CentralCommandOfficial",
+        "Quartermaster",
+        "Captain",
+        "ChiefEngineer",
+        "ERTLeader"
+    ],
+    "senior": [
+        "SeniorEngineer",
+        "SeniorOfficer",
+        "SeniorResearcher",
+        "SeniorPhysician"
+    ],
+    "cidade":[
+        "Soldado",
+        "Cidadao",
+        "Comerciante"
+    ],
+    "passageiro": [
+        "Passenger",
+        "Cidadao"
+    ],
+    "ert": [
+        "ERTEngineer",
+        "ERTJanitor",
+        "ERTMedical",
+        "ERTLeader",
+        "ERTSecurity"
+    ]
+}
