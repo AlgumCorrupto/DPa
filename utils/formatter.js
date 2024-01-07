@@ -27,11 +27,13 @@ module.exports = {
 
         for(let i = top; i <= qtd + top; i++) {
             if(i > (query.rowCount - 1)) {
-                console.log("uepa")
                 break;
             }
             response.push(query.rows[i])
         }
+
+
+        response.offset = top;
 
         return response
     }

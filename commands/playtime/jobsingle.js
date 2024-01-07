@@ -18,6 +18,7 @@ async function getPlaytime(player, job='Overall', mode='individual') {
 
     // fetch dos trabalhos (provavelmente vai ser usado depois)
     let currJobs = await pirata.query("SELECT job_name FROM job;")
+    let args;
 
     if(job == 'fronteira') {
         let playerId = await fronteira.query("SELECT user_id FROM player WHERE last_seen_user_name = $1;", [player])
@@ -30,41 +31,54 @@ async function getPlaytime(player, job='Overall', mode='individual') {
         if(response.rows[0] == undefined) {
             return "Oops, acho que esse trabalho não existe ou você nunca exerceu-o..."
         }
-
         return `jogador ${player} tem playtime de ${response.rows[0].tempo} no fronteira`;
     }
 
+
     let playerId = await pirata.query("SELECT user_id FROM player WHERE last_seen_user_name = $1;", [player])
-    //console.log(playerId.rows[0].user_id);
-    if(mode == 'rank') {
-        let query = await pirata.query("SELECT TO_CHAR(play_time.time_spent, 'MM:DD:HH:MI') AS timespent, player.last_seen_user_name AS username, play_time.player_id AS playerId FROM play_time, player WHERE play_time.tracker = $1 AND play_time.player_id = player.user_id ORDER BY play_time.time_spent DESC;", [job]);
-        let focused;
-        if(playerId.rows[0] ==  undefined) {
-            focused = formatter.focus(query)
-        } else {
-            focused = formatter.focus(query, playerId.rows[0].user_id);
-        }
-
-        let resp = `**Sua colocação no rank ${job}:** (MM:DD:HH:MI)\n`;
-        for(let i = 0; i < focused.length; i ++) {
-            if(focused[i] == undefined) {
-                break;
+    switch(mode) {
+        case 'rank':
+            args =  ( "SELECT TO_CHAR(play_time.time_spent, 'MM:DD:HH:MI') AS timespent, player.last_seen_user_name AS username, play_time.player_id AS playerId "
+                    + "FROM play_time, player "
+                    + "WHERE play_time.tracker = $1 AND play_time.player_id = player.user_id "
+                    +  "ORDER BY play_time.time_spent DESC;" 
+                    )
+            let query = await pirata.query(args, [job]);
+            let focused;
+            if(playerId.rows[0] ==  undefined) {
+                focused = formatter.focus(query)
+            } else {
+                focused = formatter.focus(query, playerId.rows[0].user_id);
             }
-            resp += `${i+1}. ${focused[i].username} Jogou por: ${focused[i].timespent};\n`
-        }
-        
-        return resp
-    }
-    if(playerId.rows[0] == undefined){
-        return "erro ao pegar ID do player, você digitou o nome corretamente?"
-    }
-    let response = await pirata.query("SELECT TO_CHAR(time_spent, 'MM:DD:HH:MI') AS tempo FROM play_time WHERE player_id = $1 AND tracker = $2;", [playerId.rows[0].user_id, job])
-    //console.log(response.rows[0].tempo)
-    if(response.rows[0] == undefined) {
-        return "Oops, acho que esse trabalho não existe ou você nunca exerceu-o..."
-    }
 
-    return `jogador ${player} tem playtime de ${response.rows[0].tempo} como ${job} (MM:DD:HH:MI)`
+            let resp = `**Sua colocação no rank ${job}:** (MM:DD:HH:MI)\n`;
+            for(let i = 0; i < focused.length; i++) {
+                if(focused[i] == undefined) {
+                    break;
+                }
+                // tem um bug aqui
+                resp += `${i+focused.offset+1}. ${focused[i].username} Jogou por: ${focused[i].timespent};\n`
+            }
+            return resp
+
+    case 'individual':
+        if(playerId.rows[0] == undefined){
+            return "erro ao pegar ID do player, você digitou o nome corretamente?"
+        }
+        args =  ( "SELECT TO_CHAR(time_spent, 'MM:DD:HH:MI') AS tempo "
+                + "FROM play_time "
+                + "WHERE player_id = $1 AND tracker = $2;"
+                )
+        let response = await pirata.query(args, [playerId.rows[0].user_id, job])
+        if(response.rows[0] == undefined) {
+            return "Oops, acho que esse trabalho não existe ou você nunca exerceu-o..."
+        }    
+        return `jogador ${player} tem playtime de ${response.rows[0].tempo} como ${job} (MM:DD:HH:MI)`
+
+    default:
+        return 'erro ao pegar tipo :(';
+
+    }
 }
 
 
