@@ -23,7 +23,7 @@ e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
 - _ Webhook para bans e unbans no jogo
 </p>
 <p>
-- _ Comandos da família playtime
+- _ Comandos da família playtime - v0.1
 </p>
 <p>
 - _ Resumo da rodada no final do round
