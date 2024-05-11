@@ -1,6 +1,5 @@
 <h1>Desassistente Pessoal artificial</h1>
-<p>Um bot que estou desenvolvendo para o servidor do discord do Estação Pirata.</p>
-<p>Bot ainda em desenvolvimento, planejado para ser tanto ferramenta administrativa remota, quanto uma ferramenta divertida com algumas interações.</p>
+<p>Um bot que era para o servidor do discord do Estação Pirata.</p>
 <h2>Uso</h2>
 <p>é necessário a chave de API do bot, uma database postgres (no momento está hardcoded slots para database do pirata e do fronteira), um arquivo config.json 
 e provavelmente no futuro uma chave de API do servidor de SS14 em si.</p>
